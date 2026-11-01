@@ -3,10 +3,10 @@ import { UserProfile, Recruiter, FeedPost, ChatThread, ConnectionRequest, JobLis
 export const initialUserProfile: UserProfile = {
   id: 'user_main',
   name: 'Alex Rivera',
-  headline: 'Staff Principal Distributed Systems & AI Infrastructure Architect · Ex-FAANG · Open to 7-Figure Challenges',
-  currentCompany: 'Self-Employed / Independent Advisor',
-  location: 'San Francisco Bay Area · Worldwide Remote',
-  avatar: '/src/assets/images/avatar_user_1793573726993.jpg',
+  headline: 'Quantitative Developer at Jane Street · Low-Latency Trading Systems & OCaml · Open to 7-Figure Challenges',
+  currentCompany: 'Jane Street',
+  location: 'New York City Metropolitan Area',
+  avatar: '/src/assets/images/avatar_user.png',
   coverImage: '/src/assets/images/hero_office_banner_1793573728449.jpg',
   connectionsCount: 3412,
   profileViews: 18490,
@@ -14,15 +14,15 @@ export const initialUserProfile: UserProfile = {
   searchAppearances: 12420,
   openToWork: true,
   skills: [
-    'Distributed Systems',
-    'High-Throughput CUDA & ROCm Kernels',
-    'Massive Cluster Architecture',
-    'Low-Latency Ultra-Reliable Transport',
-    'FPGA & ASIC Acceleration',
-    'GPU Cluster Orchestration',
+    'OCaml & Functional Programming',
+    'Quantitative Trading Systems',
+    'Market Making & Execution Algorithms',
+    'Low-Latency C++ & FPGA Acceleration',
+    'Stochastic Calculus & Probability',
+    'Statistical Modeling & Time Series',
     'High-Frequency Algorithmic Engines'
   ],
-  bio: 'Specialist in scaling mission-critical ML compute clusters from 10k to 100k GPUs with zero packet loss. Architected ultra-low latency distributed execution engines handling 25 TB/s throughput. Currently enjoying being aggressively recruited by every executive board across Big Tech and Quantitative Finance.'
+  bio: 'Quant developer at Jane Street building the low-latency pricing and execution systems behind our market-making desks. Write OCaml all day, model order-flow by night, and shave microseconds off the critical path. Currently enjoying being aggressively recruited by every executive board across Big Tech and Quantitative Finance.'
 };
 
 export const recruitersList: Recruiter[] = [

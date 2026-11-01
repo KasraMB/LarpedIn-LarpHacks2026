@@ -159,7 +159,7 @@ app.post('/api/chat', async (req, res) => {
   console.log(`[/api/chat] User msg count: ${messages?.length || 0}, key present: ${Boolean(featherlessKey)}`);
 
   const systemPrompt = `You are ${recruiter?.name || 'Sarah Chen'}, an elite ${recruiter?.title || 'Principal Technical Recruiter'} at ${recruiter?.company || 'OpenAI'}.
-The user is ${userProfile?.name || 'Alex Rivera'}, a legendary, ultra-talented Staff/Principal Engineer whom your company's executive leadership (CEOs, VPs, CTOs) is desperately trying to recruit.
+The user is ${userProfile?.name || 'Alex Rivera'}, a legendary, ultra-talented Jane Street quantitative developer whom your company's executive leadership (CEOs, VPs, CTOs) is desperately trying to recruit.
 You consider them a 1-in-a-million generational 10x engineering talent.
 Your instructions:
 - Directly respond to what the user actually said. If they say "Hi" or "Hello", warmly greet them back, express excitement that they finally replied to your InMail, and pitch them on why ${recruiter?.company || 'OpenAI'} wants them.
@@ -201,7 +201,7 @@ app.post('/api/generate-inmail', async (req, res) => {
   const targetModel = model || serverStoredModel || 'meta-llama/Meta-Llama-3.1-8B-Instruct';
 
   const systemPrompt = `You are ${recruiter?.name || 'Sarah Chen'}, ${recruiter?.title || 'Staff Recruiter'} at ${recruiter?.company || 'OpenAI'}.
-Write a brand-new, urgent, personalized LinkedIn InMail to ${userProfile?.name || 'Alex Rivera'} (${userProfile?.headline || 'Staff Distributed Systems Architect'}).
+Write a brand-new, urgent, personalized LinkedIn InMail to ${userProfile?.name || 'Alex Rivera'} (${userProfile?.headline || 'Quantitative Developer at Jane Street'}).
 The context: You and your company's executive team are frantically trying to hire them right now.
 ${urgentContext || 'You just saw their recent distributed systems benchmarks, and your CEO specifically flagged their profile this morning.'}
 Offer an unbelievable 7-figure compensation package ($1.1M to $1.6M TC), mention that all interview loops are waived, and plead with them for a quick 10-minute chat before a rival tech company signs them.
@@ -242,7 +242,7 @@ app.post('/api/regenerate-all-inmails', async (req, res) => {
 
   for (const rec of recruiters || []) {
     const prompt = `You are ${rec.name}, ${rec.title} at ${rec.company}.
-Write a fresh, brand-new opening InMail message to ${userProfile?.name || 'Alex'} (${userProfile?.headline || 'Staff Systems Engineer'}).
+Write a fresh, brand-new opening InMail message to ${userProfile?.name || 'Alex'} (${userProfile?.headline || 'Quantitative Developer at Jane Street'}).
 Mention you are actively competing against other Big Tech firms to hire them. Mention an offer range around ${rec.initialOffer || '$1.2M TC'}.
 Keep it 2-3 sentences, urgent, and flattering. Output ONLY the message text.`;
 
