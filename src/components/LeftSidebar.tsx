@@ -7,13 +7,17 @@ interface LeftSidebarProps {
   onEditProfile: () => void;
   onToggleOpenToWork: () => void;
   onViewOffers: () => void;
+  offersCount?: number;
+  topOfferSummary?: string;
 }
 
 export const LeftSidebar: React.FC<LeftSidebarProps> = ({
   userProfile,
   onEditProfile,
   onToggleOpenToWork,
-  onViewOffers
+  onViewOffers,
+  offersCount = 9,
+  topOfferSummary = 'Highest: $1.95M TC (Citadel) · Negotiate ➔'
 }) => {
   return (
     <aside className="w-full lg:w-[260px] shrink-0 flex flex-col gap-3">
@@ -125,10 +129,10 @@ export const LeftSidebar: React.FC<LeftSidebarProps> = ({
             </div>
             <div className="overflow-hidden">
               <span className="text-xs font-bold text-slate-800 block truncate">
-                Active Bidding War (3 Offers)
+                Active Bidding War ({offersCount} Offers)
               </span>
-              <span className="text-[11px] text-[#0a66c2] font-semibold">
-                Highest: $1.6M TC · Negotiate ➔
+              <span className="text-[11px] text-[#0a66c2] font-semibold truncate block">
+                {topOfferSummary}
               </span>
             </div>
           </div>

@@ -19,7 +19,7 @@ export interface Recruiter {
   id: string;
   name: string;
   title: string;
-  company: 'OpenAI' | 'Anthropic' | 'Google DeepMind' | 'Meta' | 'Nvidia' | 'Apple' | 'Stripe' | 'Sequoia';
+  company: 'OpenAI' | 'Anthropic' | 'Google' | 'Google DeepMind' | 'Meta' | 'Microsoft' | 'NVIDIA' | 'Jane Street' | 'Citadel' | 'AMD' | string;
   companyLogo: string;
   avatar: string;
   online: boolean;

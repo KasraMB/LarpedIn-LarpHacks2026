@@ -19,6 +19,13 @@ const VIP_SUGGESTIONS = [
     mutual: 412
   },
   {
+    name: 'Ken Griffin',
+    title: 'Founder & CEO at Citadel',
+    company: 'Citadel',
+    avatar: 'https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=150&auto=format&fit=crop&q=80',
+    mutual: 395
+  },
+  {
     name: 'Sam Altman',
     title: 'CEO at OpenAI',
     company: 'OpenAI',
@@ -26,10 +33,24 @@ const VIP_SUGGESTIONS = [
     mutual: 388
   },
   {
+    name: 'Satya Nadella',
+    title: 'Chairman & CEO at Microsoft',
+    company: 'Microsoft',
+    avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&auto=format&fit=crop&q=80',
+    mutual: 360
+  },
+  {
+    name: 'Dr. Lisa Su',
+    title: 'Chair & CEO at AMD',
+    company: 'AMD',
+    avatar: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=150&auto=format&fit=crop&q=80',
+    mutual: 335
+  },
+  {
     name: 'Demis Hassabis',
     title: 'CEO & Co-founder at Google DeepMind',
     company: 'Google DeepMind',
-    avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&auto=format&fit=crop&q=80',
+    avatar: 'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=150&auto=format&fit=crop&q=80',
     mutual: 320
   },
   {
@@ -38,6 +59,13 @@ const VIP_SUGGESTIONS = [
     company: 'Anthropic',
     avatar: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150&auto=format&fit=crop&q=80',
     mutual: 295
+  },
+  {
+    name: 'Mark Zuckerberg',
+    title: 'Founder & CEO at Meta',
+    company: 'Meta',
+    avatar: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&auto=format&fit=crop&q=80',
+    mutual: 310
   }
 ];
 

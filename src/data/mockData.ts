@@ -8,24 +8,72 @@ export const initialUserProfile: UserProfile = {
   location: 'San Francisco Bay Area · Worldwide Remote',
   avatar: '/src/assets/images/avatar_user_1793573726993.jpg',
   coverImage: '/src/assets/images/hero_office_banner_1793573728449.jpg',
-  connectionsCount: 2841,
-  profileViews: 14290,
-  postImpressions: 184500,
-  searchAppearances: 9420,
+  connectionsCount: 3412,
+  profileViews: 18490,
+  postImpressions: 248500,
+  searchAppearances: 12420,
   openToWork: true,
   skills: [
     'Distributed Systems',
-    'High-Throughput CUDA Kernels',
+    'High-Throughput CUDA & ROCm Kernels',
     'Massive Cluster Architecture',
-    'Low-Latency Consensus (Raft/Paxos)',
+    'Low-Latency Ultra-Reliable Transport',
+    'FPGA & ASIC Acceleration',
     'GPU Cluster Orchestration',
-    'System Design',
-    'Scalable Infrastructure'
+    'High-Frequency Algorithmic Engines'
   ],
-  bio: 'Specialist in scaling mission-critical ML compute clusters from 10k to 100k GPUs with zero packet loss. Architected distributed storage pipelines handling 25 TB/s throughput. Currently enjoying being aggressively recruited by every executive board in tech.'
+  bio: 'Specialist in scaling mission-critical ML compute clusters from 10k to 100k GPUs with zero packet loss. Architected ultra-low latency distributed execution engines handling 25 TB/s throughput. Currently enjoying being aggressively recruited by every executive board across Big Tech and Quantitative Finance.'
 };
 
 export const recruitersList: Recruiter[] = [
+  {
+    id: 'rec_citadel',
+    name: 'Pierce Harrington',
+    title: 'Managing Director, Core Quantitative Infrastructure Talent',
+    company: 'Citadel',
+    companyLogo: '🏰',
+    avatar: 'https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=150&auto=format&fit=crop&q=80',
+    online: true,
+    mutualConnections: 388,
+    initialOffer: '$1,950,000 TC ($850k base + $600k bonus + $500k sign-on)',
+    personality: 'Wall Street alpha recruiter offering cold hard cash and private jet travel stipends'
+  },
+  {
+    id: 'rec_janestreet',
+    name: 'Julian Vance',
+    title: 'Global Head of Quantitative Systems Staffing',
+    company: 'Jane Street',
+    companyLogo: '📈',
+    avatar: 'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=150&auto=format&fit=crop&q=80',
+    online: true,
+    mutualConnections: 342,
+    initialOffer: '$1,800,000 TC ($800k base + $700k bonus + $300k sign-on)',
+    personality: 'Ultra-prestigious, mathematical purist, ready to fund whatever OCaml or systems infrastructure you demand'
+  },
+  {
+    id: 'rec_nvidia',
+    name: 'Trevor Belmont',
+    title: 'Senior Executive Recruiter to the CEO',
+    company: 'NVIDIA',
+    companyLogo: '🟢',
+    avatar: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150&auto=format&fit=crop&q=80',
+    online: true,
+    mutualConnections: 450,
+    initialOffer: '$1,500,000 TC ($500k base + $750k equity + personal DGX Spark)',
+    personality: 'Jensen Huang’s direct talent scout, promises personal Blackwell GPU cluster access'
+  },
+  {
+    id: 'rec_deepmind',
+    name: 'Dr. Elena Rostova',
+    title: 'Director of Systems & AI Recruiting',
+    company: 'Google DeepMind',
+    companyLogo: '🧠',
+    avatar: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=150&auto=format&fit=crop&q=80',
+    online: true,
+    mutualConnections: 419,
+    initialOffer: '$1,600,000 TC (L8 Distinguished Fellow)',
+    personality: 'Academic powerhouse recruiter backed by Sundar Pichai’s office'
+  },
   {
     id: 'rec_openai',
     name: 'Sarah Chen',
@@ -35,7 +83,7 @@ export const recruitersList: Recruiter[] = [
     avatar: '/src/assets/images/avatar_recruiter_openai_1793573727585.jpg',
     online: true,
     mutualConnections: 312,
-    initialOffer: '$1,200,000 TC ($500k base + $700k equity)',
+    initialOffer: '$1,400,000 TC ($520k base + $700k equity + $180k sign-on)',
     personality: 'Hyper-fast, tech-fluent, desperate to secure you before Anthropic or DeepMind does'
   },
   {
@@ -47,56 +95,44 @@ export const recruitersList: Recruiter[] = [
     avatar: '/src/assets/images/avatar_recruiter_anthropic_1793573728191.jpg',
     online: true,
     mutualConnections: 248,
-    initialOffer: '$1,050,000 TC ($480k base + $570k equity)',
-    personality: 'Principled, safety-first but willing to spend unlimited budget to win you over'
+    initialOffer: '$1,350,000 TC ($490k base + $680k equity + $180k sign-on)',
+    personality: 'Safety-first but armed with unlimited compute budget to win you over'
   },
   {
-    id: 'rec_deepmind',
-    name: 'Dr. Elena Rostova',
-    title: 'Director of Systems & AI Recruiting',
-    company: 'Google DeepMind',
-    companyLogo: '🧠',
-    avatar: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=150&auto=format&fit=crop&q=80',
+    id: 'rec_microsoft',
+    name: 'Rebecca Ross',
+    title: 'VP of Executive Talent, Microsoft AI',
+    company: 'Microsoft',
+    companyLogo: '🪟',
+    avatar: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?w=150&auto=format&fit=crop&q=80',
     online: true,
-    mutualConnections: 419,
-    initialOffer: '$1,150,000 TC (L8 Distinguished Fellow)',
-    personality: 'Academic powerhouse recruiter backed by Sundar Pichai’s office'
+    mutualConnections: 375,
+    initialOffer: '$1,300,000 TC (Technical Fellow, Azure Compute)',
+    personality: 'Satya Nadella’s envoy offering planetary-scale clusters and massive executive stock grants'
   },
   {
     id: 'rec_meta',
     name: 'David Sterling',
-    title: 'Principal Technical Headhunter',
+    title: 'Principal Technical Headhunter, Reality & Core AI',
     company: 'Meta',
     companyLogo: '♾️',
     avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&auto=format&fit=crop&q=80',
     online: false,
-    mutualConnections: 187,
-    initialOffer: '$980,000 TC (E8 Principal Architect)',
+    mutualConnections: 295,
+    initialOffer: '$1,280,000 TC (E8 Principal Architect)',
     personality: 'Aggressive closer offering instant sign-on bonuses and custom hardware allowances'
   },
   {
-    id: 'rec_nvidia',
-    name: 'Trevor Belmont',
-    title: 'Senior Executive Recruiter',
-    company: 'Nvidia',
-    companyLogo: '🟢',
-    avatar: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150&auto=format&fit=crop&q=80',
-    online: true,
-    mutualConnections: 350,
-    initialOffer: '$1,300,000 TC + 500 Unvested Stock Units',
-    personality: 'Jensen Huang’s direct talent scout, promises personal Blackwell GPU access'
-  },
-  {
-    id: 'rec_stripe',
-    name: 'Chloe Dupont',
-    title: 'VP of Global Engineering Staffing',
-    company: 'Stripe',
-    companyLogo: '💳',
+    id: 'rec_amd',
+    name: 'Victor Sterling',
+    title: 'Senior Director of Silicon & ROCm Architecture Staffing',
+    company: 'AMD',
+    companyLogo: '🔴',
     avatar: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80',
     online: true,
-    mutualConnections: 165,
-    initialOffer: '$890,000 TC + Remote from anywhere',
-    personality: 'Elegant, ultra-high engineering bar, appeals to elegance of distributed payments'
+    mutualConnections: 210,
+    initialOffer: '$1,250,000 TC (Corporate Fellow, Instinct Accelerators)',
+    personality: 'Dr. Lisa Su’s direct representative, offering unreleased silicon samples'
   }
 ];
 
@@ -106,198 +142,226 @@ export const initialPosts: FeedPost[] = [
     author: {
       name: 'Jensen Huang',
       headline: 'Founder & CEO at NVIDIA',
-      company: 'Nvidia',
+      company: 'NVIDIA',
       avatar: 'https://images.unsplash.com/photo-1560250097-0b93528c311a?w=150&auto=format&fit=crop&q=80',
       verified: true
     },
     timestamp: '2h · Edited',
     content: `Rarely do I make a public LinkedIn post spotlighting a single engineer, but the distributed CUDA orchestration benchmarks Alex Rivera demonstrated this week are frankly unprecedented. 
 
-Scaling tensor parallelism across 64,000 GPUs without communication stalls is usually considered impossible. Alex solved it over a weekend in Rust. 
+Scaling tensor parallelism across 64,000 GPUs without communication stalls is usually considered mathematically impossible. Alex solved it over a weekend in bare-metal Rust.
 
 Alex, our Santa Clara headquarters has a corner office with a leather jacket in your size waiting. Our board has pre-approved whatever package your agent requests. Let’s talk.`,
     metrics: {
-      likes: 24890,
-      comments: 1842,
-      reposts: 954
+      likes: 38890,
+      comments: 2842,
+      reposts: 1954
     },
     userLiked: true,
     commentsList: [
       {
         id: 'c1',
-        author: 'Sarah Chen',
-        headline: 'Staff Technical Recruiter @ OpenAI',
-        avatar: '/src/assets/images/avatar_recruiter_openai_1793573727585.jpg',
-        text: 'Jensen, respectfully, OpenAI was first in line! Alex, our InMail was sent this morning with a signed offer term sheet. Check your messages! 🚀',
+        author: 'Pierce Harrington (Citadel)',
+        headline: 'Managing Director @ Citadel Securities',
+        avatar: 'https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=150&auto=format&fit=crop&q=80',
+        text: 'Jensen, with all respect, Citadel already sent Alex a $1.95M cash-heavy term sheet. We can wire their signing bonus before your leather jacket arrives. 💼',
         timestamp: '1h ago',
-        likes: 642
+        likes: 1242
       },
       {
         id: 'c2',
-        author: 'Marcus Vance',
-        headline: 'Executive Talent Partner @ Anthropic',
-        avatar: '/src/assets/images/avatar_recruiter_anthropic_1793573728191.jpg',
-        text: 'Both of you are too late. Dario already drafted an unannounced Foundation Model cluster lead role for Alex with unlimited compute credits.',
+        author: 'Sarah Chen',
+        headline: 'Staff Technical Recruiter @ OpenAI',
+        avatar: '/src/assets/images/avatar_recruiter_openai_1793573727585.jpg',
+        text: 'OpenAI was first in line! Alex, our InMail was sent this morning with a signed offer term sheet. Check your messages! 🚀',
         timestamp: '45m ago',
-        likes: 418
+        likes: 818
       }
     ],
-    tag: '#SystemsEngineering #AIInfrastructure'
+    tag: '#SystemsEngineering #AIInfrastructure #BiddingWar'
   },
   {
     id: 'post_2',
     author: {
-      name: 'Sarah Chen',
-      headline: 'Staff Technical Recruiter, Executive Talent at OpenAI',
-      company: 'OpenAI',
-      avatar: '/src/assets/images/avatar_recruiter_openai_1793573727585.jpg',
-      verified: true
-    },
-    timestamp: '5h',
-    content: `Confession of a Big Tech recruiter:
-
-I’ve had Alex Rivera's LinkedIn profile bookmarked on my second monitor for three weeks. Every morning at 8:00 AM PST, our VP of Supercomputing pings me: "Did Alex reply to the InMail yet?"
-
-Alex, if you see this, we will literally:
-1. Waive all coding screens.
-2. Grant you full architectural authority over our next training cluster.
-3. Pay you more than our Chief Strategy Officer.
-4. Send our private shuttle to pick up your dog.
-
-Please check your DMs! 😭🙏`,
-    metrics: {
-      likes: 18230,
-      comments: 2110,
-      reposts: 840
-    },
-    userLiked: false,
-    commentsList: [
-      {
-        id: 'c3',
-        author: 'David Sterling',
-        headline: 'Principal Recruiter @ Meta',
-        avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&auto=format&fit=crop&q=80',
-        text: 'Sarah, stop begging in the comments. Zuck already sent Alex an Oculus Quest prototype with the offer letter pre-loaded in VR.',
-        timestamp: '3h ago',
-        likes: 890
-      }
-    ],
-    tag: '#Recruiting #AIWarForTalent'
-  },
-  {
-    id: 'post_3',
-    author: {
-      name: 'TechCrunch Silicon Valley',
-      headline: 'The Voice of Venture Capital & Tech Giants',
+      name: 'Bloomberg Tech & Quant Wire',
+      headline: 'The Authoritative Voice of Global Technology & Financial Markets',
       avatar: 'https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=150&auto=format&fit=crop&q=80',
       verified: true
     },
-    timestamp: '1d',
-    content: `BREAKING: Inside the 8-way bidding war for Staff Architect Alex Rivera. 
+    timestamp: '5h',
+    content: `BREAKING: Silicon Valley and Wall Street enter unprecedented 9-way bidding war for Staff Architect Alex Rivera.
 
-Sources close to Google DeepMind, OpenAI, and NVIDIA confirm that executive compensation packages for top-tier distributed systems architects have officially crossed $1.4M annually, with signing bonuses comparable to NBA draft picks.
+Reports confirm that Citadel, Jane Street, Google DeepMind, OpenAI, Microsoft, Meta, AMD, and NVIDIA have all escalated executive compensation offers above $1.5M, with Citadel pushing toward $2.0M annually.
 
-"There are perhaps four humans on Earth who truly understand how to eliminate micro-stragglers in distributed training clusters," remarked one prominent Sequoia Partner. "Alex is three of them."`,
+"There are perhaps four humans on Earth who truly understand how to eliminate micro-stragglers in distributed training clusters and high-frequency order books," noted one Sequoia Capital Partner. "Alex is three of them."`,
     metrics: {
-      likes: 31250,
-      comments: 3410,
-      reposts: 1920
+      likes: 42230,
+      comments: 3810,
+      reposts: 2440
     },
     userLiked: true,
     commentsList: [
       {
-        id: 'c4',
-        author: 'Dr. Elena Rostova',
-        headline: 'Director of Recruiting @ DeepMind',
-        avatar: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=150&auto=format&fit=crop&q=80',
-        text: 'Accurate reporting. We have an open requisition tailored specifically around Alex’s published research. Mountain View is waiting.',
-        timestamp: '18h ago',
-        likes: 512
+        id: 'c3',
+        author: 'Julian Vance (Jane Street)',
+        headline: 'Head of Quant Systems Staffing @ Jane Street',
+        avatar: 'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=150&auto=format&fit=crop&q=80',
+        text: 'Accurate reporting. Jane Street has prepared a bespoke research fellowship for Alex with zero bureaucracy and an uncapped bonus structure.',
+        timestamp: '3h ago',
+        likes: 990
       }
     ],
-    tag: '#TechNews #EngineeringCompensation'
+    tag: '#FinanceTech #HighFrequency #BigTechTalent'
   }
 ];
 
 export const initialChatThreads: ChatThread[] = [
   {
-    id: 'thread_openai',
+    id: 'thread_citadel',
     recruiter: recruitersList[0],
-    unreadCount: 3,
-    lastMessageTimestamp: '10m ago',
-    messages: [
-      {
-        id: 'm1',
-        threadId: 'thread_openai',
-        sender: 'recruiter',
-        text: 'Alex! I know you are bombarded with messages right now, so I will cut straight through the noise.',
-        timestamp: 'Yesterday, 4:15 PM'
-      },
-      {
-        id: 'm2',
-        threadId: 'thread_openai',
-        sender: 'recruiter',
-        text: 'Our VP of Engineering specifically instructed me to bring you in as Principal Infrastructure Lead. We are preparing a $1.2M total comp package ($500k cash base + $700k liquid equity), fully remote with zero interview loops—just an informal lunch with Sam Altman.',
-        timestamp: 'Yesterday, 4:16 PM'
-      },
-      {
-        id: 'm3',
-        threadId: 'thread_openai',
-        sender: 'recruiter',
-        text: 'Can we hold 15 minutes on your calendar tomorrow? We can wire your sign-on bonus the moment you sign the doc.',
-        timestamp: '10m ago'
-      }
-    ]
-  },
-  {
-    id: 'thread_anthropic',
-    recruiter: recruitersList[1],
     unreadCount: 2,
-    lastMessageTimestamp: '42m ago',
+    lastMessageTimestamp: '5m ago',
     messages: [
       {
-        id: 'm4',
-        threadId: 'thread_anthropic',
+        id: 'm_cit_1',
+        threadId: 'thread_citadel',
         sender: 'recruiter',
-        text: 'Hello Alex! Marcus here from Anthropic. Dario and the research staff have been citing your multi-cluster paper in our weekly alignment reviews.',
-        timestamp: '2h ago'
+        text: 'Alex, Ken Griffin specifically requested that I get in touch with you. While Big Tech offers paper stock that vests over four years, Citadel pays liquid cash bonuses that dwarf the industry.',
+        timestamp: 'Yesterday, 2:30 PM'
       },
       {
-        id: 'm5',
-        threadId: 'thread_anthropic',
+        id: 'm_cit_2',
+        threadId: 'thread_citadel',
         sender: 'recruiter',
-        text: 'We are creating a dedicated Systems Fellowship role with your name on it. Starting at $1,050,000 TC + dedicated cluster of 16,000 H100s for your own independent experiments. What would it take to get you on a call today?',
-        timestamp: '42m ago'
+        text: 'We have drafted a $1,950,000 first-year package ($850k base + $600k performance bonus + $500k cash sign-on). Can we schedule a brief confidential conversation today?',
+        timestamp: '5m ago'
       }
     ]
   },
   {
-    id: 'thread_deepmind',
-    recruiter: recruitersList[2],
+    id: 'thread_janestreet',
+    recruiter: recruitersList[1],
     unreadCount: 1,
-    lastMessageTimestamp: '1h ago',
+    lastMessageTimestamp: '15m ago',
     messages: [
       {
-        id: 'm6',
-        threadId: 'thread_deepmind',
+        id: 'm_js_1',
+        threadId: 'thread_janestreet',
         sender: 'recruiter',
-        text: 'Alex, Sundar and Demis asked me to reach out directly. We have an unannounced L8 Distinguished Fellow position on our Gemini Next infrastructure. We are prepared to match any counteroffer plus 20% guaranteed.',
-        timestamp: '1h ago'
+        text: 'Hello Alex! Jane Street has been studying your published consensus benchmarks. We are offering an unrestricted Systems Fellowship at $1.8M total comp, completely remote, with full access to our global FPGA infrastructure.',
+        timestamp: '15m ago'
       }
     ]
   },
   {
     id: 'thread_nvidia',
+    recruiter: recruitersList[2],
+    unreadCount: 1,
+    lastMessageTimestamp: '30m ago',
+    messages: [
+      {
+        id: 'm_nv_1',
+        threadId: 'thread_nvidia',
+        sender: 'recruiter',
+        text: 'Alex, Jensen asked about you in our executive sync. He literally said: "Give Alex whatever they want, and ship a personal DGX Spark workstation to their home tomorrow." We have pre-approved $1.5M TC!',
+        timestamp: '30m ago'
+      }
+    ]
+  },
+  {
+    id: 'thread_deepmind',
+    recruiter: recruitersList[3],
+    unreadCount: 1,
+    lastMessageTimestamp: '1h ago',
+    messages: [
+      {
+        id: 'm_dm_1',
+        threadId: 'thread_deepmind',
+        sender: 'recruiter',
+        text: 'Alex, Sundar and Demis asked me to reach out directly. We have an unannounced L8 Distinguished Fellow position on our Gemini Next infrastructure at $1.6M TC. We will beat any competing term sheet.',
+        timestamp: '1h ago'
+      }
+    ]
+  },
+  {
+    id: 'thread_openai',
     recruiter: recruitersList[4],
+    unreadCount: 2,
+    lastMessageTimestamp: '2h ago',
+    messages: [
+      {
+        id: 'm_oa_1',
+        threadId: 'thread_openai',
+        sender: 'recruiter',
+        text: 'Alex! I know you are bombarded with messages right now, so I will cut straight through the noise. Our VP of Engineering specifically instructed me to bring you in as Principal Infrastructure Lead.',
+        timestamp: 'Yesterday, 4:15 PM'
+      },
+      {
+        id: 'm_oa_2',
+        threadId: 'thread_openai',
+        sender: 'recruiter',
+        text: 'We are preparing a $1.4M total comp package ($520k cash base + $700k liquid equity + $180k sign-on bonus). Zero interview loops—just lunch with Sam Altman.',
+        timestamp: '2h ago'
+      }
+    ]
+  },
+  {
+    id: 'thread_anthropic',
+    recruiter: recruitersList[5],
     unreadCount: 1,
     lastMessageTimestamp: '3h ago',
     messages: [
       {
-        id: 'm7',
-        threadId: 'thread_nvidia',
+        id: 'm_ant_1',
+        threadId: 'thread_anthropic',
         sender: 'recruiter',
-        text: 'Alex, Jensen asked about you again in our executive sync. He literally said: "Give Alex whatever they want, and ship a personal DGX Spark workstation to their house tomorrow." Name your terms!',
+        text: 'Hello Alex! Marcus here from Anthropic. Dario has pre-approved a dedicated Systems Fellowship role at $1,350,000 TC + dedicated 16,000 GPU cluster access for your independent research.',
         timestamp: '3h ago'
+      }
+    ]
+  },
+  {
+    id: 'thread_microsoft',
+    recruiter: recruitersList[6],
+    unreadCount: 1,
+    lastMessageTimestamp: '4h ago',
+    messages: [
+      {
+        id: 'm_ms_1',
+        threadId: 'thread_microsoft',
+        sender: 'recruiter',
+        text: 'Alex, Satya Nadella’s office flagged your distributed compute work. We have an open Technical Fellow requisition on Azure Supercomputing with an initial $1.3M package and massive stock grant.',
+        timestamp: '4h ago'
+      }
+    ]
+  },
+  {
+    id: 'thread_meta',
+    recruiter: recruitersList[7],
+    unreadCount: 1,
+    lastMessageTimestamp: '5h ago',
+    messages: [
+      {
+        id: 'm_meta_1',
+        threadId: 'thread_meta',
+        sender: 'recruiter',
+        text: 'Alex, Zuck already signed off on an E8 Principal Systems Architect band ($1.28M TC) with an immediate cash bonus. All interview loops are officially waived for you.',
+        timestamp: '5h ago'
+      }
+    ]
+  },
+  {
+    id: 'thread_amd',
+    recruiter: recruitersList[8],
+    unreadCount: 1,
+    lastMessageTimestamp: '6h ago',
+    messages: [
+      {
+        id: 'm_amd_1',
+        threadId: 'thread_amd',
+        sender: 'recruiter',
+        text: 'Alex, Dr. Lisa Su personally asked me to reach out. We are building our next-generation ROCm compute fabric and want you as Corporate Fellow at $1.25M TC with unreleased silicon access.',
+        timestamp: '6h ago'
       }
     ]
   }
@@ -305,139 +369,216 @@ export const initialChatThreads: ChatThread[] = [
 
 export const initialConnectionRequests: ConnectionRequest[] = [
   {
-    id: 'conn_1',
+    id: 'conn_cit',
     recruiter: recruitersList[0],
-    note: 'Alex, please accept! Our entire leadership team has your profile open in a war room right now. We need you on our infrastructure team.',
-    timestamp: '12m ago',
+    note: 'Alex, Citadel Securities is prepared to offer you an immediate $1.95M package. Connecting to bypass standard recruiters!',
+    timestamp: '5m ago',
     status: 'pending'
   },
   {
-    id: 'conn_2',
+    id: 'conn_js',
     recruiter: recruitersList[1],
-    note: 'Would love to connect, Alex. Anthropic has an unannounced compute cluster lead role pre-approved for you at $1.05M TC.',
+    note: 'Julian from Jane Street. Our executive partners want to discuss leading our core algorithmic infrastructure.',
+    timestamp: '25m ago',
+    status: 'pending'
+  },
+  {
+    id: 'conn_nv',
+    recruiter: recruitersList[2],
+    note: 'NVIDIA Executive Talent. Jensen Huang asked me to get you on his personal calendar this week.',
     timestamp: '45m ago',
     status: 'pending'
   },
   {
-    id: 'conn_3',
-    recruiter: recruitersList[2],
-    note: 'Elena from Google DeepMind. We are ready to make a formal written L8 offer without any standard loops. Connecting directly!',
+    id: 'conn_dm',
+    recruiter: recruitersList[3],
+    note: 'Elena from Google DeepMind. We are ready to make a formal written L8 offer without any standard loops.',
+    timestamp: '1h ago',
+    status: 'pending'
+  },
+  {
+    id: 'conn_oa',
+    recruiter: recruitersList[4],
+    note: 'Sarah from OpenAI. We prepared a $1.4M offer sheet with your name on it!',
     timestamp: '2h ago',
     status: 'pending'
   },
   {
-    id: 'conn_4',
-    recruiter: recruitersList[4],
-    note: 'Nvidia Executive Search. Jensen asked me to get you on his personal calendar this week.',
-    timestamp: '5h ago',
-    status: 'pending'
-  },
-  {
-    id: 'conn_5',
-    recruiter: recruitersList[5],
-    note: 'Stripe Core Infra wants to offer you a Distinguished Staff seat. 100% remote anywhere in the world, $900k package.',
-    timestamp: '1d ago',
+    id: 'conn_ms',
+    recruiter: recruitersList[6],
+    note: 'Microsoft AI Executive Staffing. Satya asked for an intro call regarding Azure Planetary Compute.',
+    timestamp: '3h ago',
     status: 'pending'
   }
 ];
 
 export const initialJobListings: JobListing[] = [
   {
-    id: 'job_1',
-    title: 'Distinguished AI Infrastructure Architect (Direct Executive Requisition)',
-    company: 'OpenAI',
-    companyLogo: '🤖',
-    location: 'San Francisco, CA or Worldwide Remote',
-    salaryRange: '$1,100,000 - $1,650,000 / yr',
+    id: 'job_citadel',
+    title: 'Ultra-Low Latency Kernel Architect (Global Fast Track)',
+    company: 'Citadel',
+    companyLogo: '🏰',
+    location: 'New York, Chicago, or Worldwide Remote',
+    salaryRange: '$1,800,000 - $2,400,000 / yr',
+    workType: 'Remote',
+    postedAgo: '1h ago',
+    applicantsCount: 1,
+    description: 'Design the core multi-gigabit algorithmic execution pipelines powering global financial markets. Tailored specifically for Alex Rivera with zero coding loops.',
+    perks: ['100% cash-heavy compensation', '$500k instant sign-on bonus', 'Private aviation stipend', 'Dedicated hardware lab'],
+    fastTrackAvailable: true
+  },
+  {
+    id: 'job_janestreet',
+    title: 'Distinguished Systems & Algorithmic Fellow',
+    company: 'Jane Street',
+    companyLogo: '📈',
+    location: 'New York, London, or Worldwide Remote',
+    salaryRange: '$1,600,000 - $2,200,000 / yr',
+    workType: 'Remote',
+    postedAgo: '2h ago',
+    applicantsCount: 1,
+    description: 'Architect foundational low-latency distributed networks and hardware-accelerated consensus layers. Uncapped annual performance bonus pool.',
+    perks: ['Zero bureaucracy', 'Uncapped annual cash bonus', 'Flexible remote schedule', 'Complete architectural veto'],
+    fastTrackAvailable: true
+  },
+  {
+    id: 'job_nvidia',
+    title: 'Chief Blackwell Architecture Fellow',
+    company: 'NVIDIA',
+    companyLogo: '🟢',
+    location: 'Santa Clara, CA or Remote',
+    salaryRange: '$1,400,000 - $1,900,000 / yr',
     workType: 'Remote',
     postedAgo: '3h ago',
     applicantsCount: 1,
-    description: 'Lead next-generation distributed cluster architecture. You will report directly to executive leadership, command massive GPU fleets, and possess full architectural veto rights.',
-    perks: ['Unlimited compute credits', '$150k instant sign-on bonus', 'First-class travel anywhere', 'No coding interview required for Alex'],
+    description: 'Lead next-generation GPU clustering and NVLink scale-up fabrics. Reports directly to executive leadership.',
+    perks: ['Personal DGX Spark cluster', 'Direct access to Jensen Huang', 'Accelerated stock grant'],
     fastTrackAvailable: true
   },
   {
-    id: 'job_2',
-    title: 'Principal Systems Fellow - Large Scale Compute',
-    company: 'Anthropic',
-    companyLogo: '⚡',
-    location: 'San Francisco, CA / Seattle / Remote',
-    salaryRange: '$950,000 - $1,400,000 / yr',
-    workType: 'Remote',
-    postedAgo: '5h ago',
-    applicantsCount: 1,
-    description: 'We are seeking our definitive expert in low-latency communication primitives and cluster fault recovery. Designed specifically for Alex Rivera.',
-    perks: ['Dedicated research budget', 'Accelerated equity vesting', 'Four-day work week negotiable', 'Executive equity pool'],
-    fastTrackAvailable: true
-  },
-  {
-    id: 'job_3',
-    title: 'L8 Distinguished Architect - Gemini Supercomputing',
+    id: 'job_google',
+    title: 'L8 Distinguished Systems Fellow - Gemini Supercomputing',
     company: 'Google DeepMind',
     companyLogo: '🧠',
     location: 'Mountain View, CA or Remote',
-    salaryRange: '$1,200,000 - $1,750,000 / yr',
+    salaryRange: '$1,300,000 - $1,800,000 / yr',
     workType: 'Remote',
-    postedAgo: '1d ago',
+    postedAgo: '4h ago',
     applicantsCount: 1,
-    description: 'Oversee multi-datacenter distributed TPU and GPU orchestration. Waives all standard Google hiring committees. Direct sign-off from Sundar Pichai.',
-    perks: ['Google Fellow Fast Track', '$300k relocation / home-lab setup', 'Direct executive sponsorship'],
+    description: 'Oversee multi-datacenter distributed TPU and GPU orchestration. Waives all standard Google hiring committees.',
+    perks: ['Google Fellow Fast Track', '$300k home-lab setup', 'Direct executive sponsorship'],
     fastTrackAvailable: true
   },
   {
-    id: 'job_4',
-    title: 'E8 Principal Systems Architect - Reality & Core AI',
+    id: 'job_openai',
+    title: 'Distinguished AI Infrastructure Architect',
+    company: 'OpenAI',
+    companyLogo: '🤖',
+    location: 'San Francisco, CA or Remote',
+    salaryRange: '$1,200,000 - $1,750,000 / yr',
+    workType: 'Remote',
+    postedAgo: '5h ago',
+    applicantsCount: 1,
+    description: 'Command massive GPU fleets and shape core training architecture for frontier foundation models.',
+    perks: ['Unlimited compute credits', '$180k instant sign-on bonus', 'First-class travel anywhere'],
+    fastTrackAvailable: true
+  },
+  {
+    id: 'job_microsoft',
+    title: 'Technical Fellow - Azure Planetary Scale Compute',
+    company: 'Microsoft',
+    companyLogo: '🪟',
+    location: 'Redmond, WA or Remote',
+    salaryRange: '$1,150,000 - $1,650,000 / yr',
+    workType: 'Remote',
+    postedAgo: '6h ago',
+    applicantsCount: 1,
+    description: 'Lead cloud supercomputing architecture across 60+ global Azure regions. Direct partnership with Microsoft leadership.',
+    perks: ['Technical Fellow band', 'Executive equity pool', 'Full remote authorization'],
+    fastTrackAvailable: true
+  },
+  {
+    id: 'job_meta',
+    title: 'E8 Principal Systems Architect - Core AI',
     company: 'Meta',
     companyLogo: '♾️',
     location: 'Menlo Park, CA or Remote',
-    salaryRange: '$980,000 - $1,350,000 / yr',
+    salaryRange: '$1,100,000 - $1,550,000 / yr',
     workType: 'Remote',
-    postedAgo: '2d ago',
+    postedAgo: '1d ago',
     applicantsCount: 1,
-    description: 'Architect foundational inference and training pipelines across Meta’s 350,000 GPU fleet. Direct access to executive steering committee.',
+    description: 'Lead architecture for Meta’s 350,000 GPU fleet with direct access to the executive steering committee.',
     perks: ['E8 Principal Band', 'Maximum equity grant allowance', 'Full remote authorization'],
+    fastTrackAvailable: true
+  },
+  {
+    id: 'job_amd',
+    title: 'Corporate Fellow - Instinct GPU & ROCm Ecosystem',
+    company: 'AMD',
+    companyLogo: '🔴',
+    location: 'Austin, TX or Remote',
+    salaryRange: '$1,050,000 - $1,500,000 / yr',
+    workType: 'Remote',
+    postedAgo: '1d ago',
+    applicantsCount: 1,
+    description: 'Define the architectural future of open AI hardware and ROCm software stacks. Direct sponsorship from Dr. Lisa Su.',
+    perks: ['Corporate Fellow title', 'Unreleased silicon early access', 'Executive bonus pool'],
+    fastTrackAvailable: true
+  },
+  {
+    id: 'job_anthropic',
+    title: 'Distinguished Systems Fellow - Frontier Cluster Architecture',
+    company: 'Anthropic',
+    companyLogo: '⚡',
+    location: 'San Francisco, CA or Remote',
+    salaryRange: '$1,200,000 - $1,700,000 / yr',
+    workType: 'Remote',
+    postedAgo: '3h ago',
+    applicantsCount: 1,
+    description: 'Lead next-generation distributed cluster orchestration for Claude frontier models with direct sponsorship from Dario Amodei.',
+    perks: ['16,000 GPU dedicated research partition', 'Direct weekly sync with Dario Amodei', 'Accelerated equity grant'],
     fastTrackAvailable: true
   }
 ];
 
 export const initialOfferPackages: OfferPackage[] = [
   {
-    id: 'offer_openai',
-    company: 'OpenAI',
-    companyLogo: '🤖',
-    recruiterName: 'Sarah Chen (Staff Recruiter)',
-    roleTitle: 'Distinguished Infrastructure Architect',
-    baseSalary: 520000,
-    equityAnnual: 750000,
-    signOnBonus: 200000,
+    id: 'offer_citadel',
+    company: 'Citadel',
+    companyLogo: '🏰',
+    recruiterName: 'Pierce Harrington (Managing Director)',
+    roleTitle: 'Managing Director, Core Quantitative Systems',
+    baseSalary: 850000,
+    equityAnnual: 600000,
+    signOnBonus: 500000,
     perks: [
-      '100% remote from anywhere',
-      '$30,000 personal computing hardware stipend',
-      'Direct monthly sync with Sam Altman',
-      'Accelerated quarterly equity liquidity'
+      '100% cash-based compensation (no unvested paper)',
+      'Immediate $500,000 cash sign-on wired on Day 1',
+      'Unrestricted private travel allowance',
+      'Complete architectural autonomy over FPGA & C++ trading stack'
     ],
     status: 'pending',
-    lastUpdated: '15m ago',
-    recruiterNotes: 'Our board signed off on this package with zero resistance. If you need an extra $100k base, let me know and I will adjust the DocuSign immediately.'
+    lastUpdated: '5m ago',
+    recruiterNotes: 'Ken Griffin personally pre-approved this cash offer. If you need an additional $200k base, tell me and the term sheet is updated immediately.'
   },
   {
-    id: 'offer_anthropic',
-    company: 'Anthropic',
-    companyLogo: '⚡',
-    recruiterName: 'Marcus Vance (Executive Talent Partner)',
-    roleTitle: 'Principal Systems Fellow',
-    baseSalary: 490000,
-    equityAnnual: 680000,
-    signOnBonus: 175000,
+    id: 'offer_janestreet',
+    company: 'Jane Street',
+    companyLogo: '📈',
+    recruiterName: 'Julian Vance (Head of Systems Staffing)',
+    roleTitle: 'Distinguished Systems Fellow',
+    baseSalary: 800000,
+    equityAnnual: 700000,
+    signOnBonus: 300000,
     perks: [
-      'Dedicated 16,000 H100 GPU cluster access',
-      'Flexible 4-day work schedule option',
-      'Full health, dental, vision + concierge medicine',
-      'Generous family travel stipends'
+      'Uncapped annual cash bonus based on firm performance',
+      '100% remote flexibility from anywhere on Earth',
+      'Custom hardware design budget with zero approval gates',
+      'Full family healthcare and concierge wellness'
     ],
     status: 'negotiating',
-    lastUpdated: '45m ago',
-    recruiterNotes: 'Dario specifically authorized our highest equity allocation for this role. We are ready to match and beat OpenAI.'
+    lastUpdated: '20m ago',
+    recruiterNotes: 'Our partnership reviewed your benchmarks and unanimously agreed to meet whatever Citadel offers.'
   },
   {
     id: 'offer_deepmind',
@@ -454,92 +595,206 @@ export const initialOfferPackages: OfferPackage[] = [
       'No committee review required for your team hires'
     ],
     status: 'pending',
+    lastUpdated: '1h ago',
+    recruiterNotes: 'Sundar personally approved this compensation structure to ensure you join DeepMind.'
+  },
+  {
+    id: 'offer_nvidia',
+    company: 'NVIDIA',
+    companyLogo: '🟢',
+    recruiterName: 'Trevor Belmont (Executive Recruiter)',
+    roleTitle: 'Chief Blackwell Architecture Fellow',
+    baseSalary: 500000,
+    equityAnnual: 750000,
+    signOnBonus: 250000,
+    perks: [
+      'Dedicated personal Blackwell GPU cluster',
+      'Direct monthly strategy dinner with Jensen Huang',
+      'Custom leather jacket with embedded hardware crest'
+    ],
+    status: 'pending',
+    lastUpdated: '1h ago',
+    recruiterNotes: 'Jensen said whatever other companies put on paper, NVIDIA will match with GPU allocations no one else can buy.'
+  },
+  {
+    id: 'offer_openai',
+    company: 'OpenAI',
+    companyLogo: '🤖',
+    recruiterName: 'Sarah Chen (Staff Recruiter)',
+    roleTitle: 'Distinguished Infrastructure Architect',
+    baseSalary: 520000,
+    equityAnnual: 700000,
+    signOnBonus: 180000,
+    perks: [
+      '100% remote from anywhere',
+      '$30,000 personal computing hardware stipend',
+      'Direct monthly sync with Sam Altman',
+      'Accelerated quarterly equity liquidity'
+    ],
+    status: 'pending',
     lastUpdated: '2h ago',
-    recruiterNotes: 'Sundar personally approved this compensation structure to ensure you join DeepMind rather than our competitors.'
+    recruiterNotes: 'Our board signed off on this package with zero resistance. Can lock this in with Sam today.'
+  },
+  {
+    id: 'offer_microsoft',
+    company: 'Microsoft',
+    companyLogo: '🪟',
+    recruiterName: 'Rebecca Ross (VP of Talent)',
+    roleTitle: 'Technical Fellow, Azure Compute',
+    baseSalary: 480000,
+    equityAnnual: 620000,
+    signOnBonus: 200000,
+    perks: [
+      'Technical Fellow executive grade',
+      'Complete autonomy over Azure cluster topology',
+      'Executive stock grant accelerator'
+    ],
+    status: 'pending',
+    lastUpdated: '4h ago',
+    recruiterNotes: 'Satya Nadella is ready to counter any offer from Google or Citadel.'
+  },
+  {
+    id: 'offer_meta',
+    company: 'Meta',
+    companyLogo: '♾️',
+    recruiterName: 'David Sterling (Reality Labs & AI Staffing)',
+    roleTitle: 'E8 Principal Systems Architect',
+    baseSalary: 490000,
+    equityAnnual: 650000,
+    signOnBonus: 200000,
+    perks: [
+      'E8 Principal level with direct executive veto',
+      'All technical interview rounds officially waived by Mark Zuckerberg',
+      'Dedicated $150k custom home lab hardware budget'
+    ],
+    status: 'pending',
+    lastUpdated: '5h ago',
+    recruiterNotes: 'Mark personally approved waiving the entire 6-round technical loop. Immediate signature bonus wired.'
+  },
+  {
+    id: 'offer_anthropic',
+    company: 'Anthropic',
+    companyLogo: '⚡',
+    recruiterName: 'Marcus Vance (Executive Talent Acquisition)',
+    roleTitle: 'Distinguished Systems Fellow',
+    baseSalary: 510000,
+    equityAnnual: 680000,
+    signOnBonus: 160000,
+    perks: [
+      '16,000 GPU cluster dedicated partition for your architectural research',
+      'Direct reporting line to Dario Amodei',
+      'Full liquidity matching Big Tech public equity'
+    ],
+    status: 'pending',
+    lastUpdated: '3h ago',
+    recruiterNotes: 'Dario signed off on your compute reservation: 16k cluster ready the day you accept.'
+  },
+  {
+    id: 'offer_amd',
+    company: 'AMD',
+    companyLogo: '🔴',
+    recruiterName: 'Victor Sterling (Director of Silicon Talent)',
+    roleTitle: 'Corporate Fellow, Instinct Accelerators & ROCm',
+    baseSalary: 460000,
+    equityAnnual: 600000,
+    signOnBonus: 190000,
+    perks: [
+      'Corporate Fellow title (highest technical rank at AMD)',
+      'Unreleased silicon sample pipeline straight to your desk',
+      'Direct advisory access to Dr. Lisa Su'
+    ],
+    status: 'pending',
+    lastUpdated: '6h ago',
+    recruiterNotes: 'Dr. Lisa Su wants you leading our next-gen ROCm and Ultra Ethernet fabric systems.'
   }
 ];
 
 export const initialNotifications: NotificationItem[] = [
   {
     id: 'notif_1',
-    type: 'inmail',
-    title: 'Sarah Chen sent you an urgent InMail',
-    subtitle: '"We prepared a $1.2M offer sheet with your name on it..."',
-    timestamp: '10m ago',
-    avatar: '/src/assets/images/avatar_recruiter_openai_1793573727585.jpg',
+    type: 'offer',
+    title: 'Citadel uploaded a $1.95M cash-heavy term sheet to your vault',
+    subtitle: 'Pierce Harrington: "$500k signing bonus wired upon signature."',
+    timestamp: '5m ago',
+    avatar: 'https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=150&auto=format&fit=crop&q=80',
     read: false,
-    actionLabel: 'Reply to Sarah'
+    actionLabel: 'Review $1.95M Offer'
   },
   {
     id: 'notif_2',
+    type: 'inmail',
+    title: 'Julian Vance (Jane Street) sent you an urgent InMail',
+    subtitle: '"We can beat any Big Tech package with pure cash bonuses..."',
+    timestamp: '15m ago',
+    read: false,
+    actionLabel: 'Reply to Jane Street'
+  },
+  {
+    id: 'notif_3',
     type: 'view',
-    title: 'Jensen Huang and 412 others viewed your profile',
-    subtitle: 'Profile views are up 842% this week',
+    title: 'Jensen Huang and 612 others viewed your profile',
+    subtitle: 'Profile views are up 942% this week across NVIDIA, Citadel, and OpenAI',
     timestamp: '25m ago',
     avatar: 'https://images.unsplash.com/photo-1560250097-0b93528c311a?w=150&auto=format&fit=crop&q=80',
     read: false
   },
   {
-    id: 'notif_3',
+    id: 'notif_4',
     type: 'endorse',
-    title: 'Sam Altman and 84 others endorsed you for Distributed Systems',
-    subtitle: 'You are now ranked #1 in San Francisco for this skill',
+    title: 'Sam Altman, Lisa Su, and 94 others endorsed you for Distributed Systems',
+    subtitle: 'Ranked #1 globally for high-throughput cluster architectures',
     timestamp: '1h ago',
     read: false
   },
   {
-    id: 'notif_4',
-    type: 'trending',
-    title: 'Your post is trending in Silicon Valley (#1 on Tech LinkedIn)',
-    subtitle: 'Over 48,000 software engineers and recruiters are reading it',
-    timestamp: '3h ago',
-    read: true
-  },
-  {
     id: 'notif_5',
-    type: 'offer',
-    title: 'Google DeepMind uploaded a formal Offer Letter to your vault',
-    subtitle: 'L8 Distinguished Systems Fellow: $1.6M Total Package',
-    timestamp: '5h ago',
-    read: true,
-    actionLabel: 'Review Offer'
+    type: 'trending',
+    title: 'LarpedIn News: Silicon Valley & Wall St in 9-way bidding war over you',
+    subtitle: 'Over 84,000 software engineers and recruiters are reading about your compensation',
+    timestamp: '2h ago',
+    read: true
   }
 ];
 
 export const sampleAttentionEvents = [
   {
-    title: '💰 Meta bumped their offer!',
-    subtitle: 'David Sterling: "We just added a $250k cash signing bonus to close the deal today."',
+    title: '💰 Citadel bumped their cash offer to $2.05M!',
+    subtitle: 'Pierce Harrington: "We just increased the signing bonus to close you this week."',
     type: 'offer'
   },
   {
-    title: '🚨 Sundar Pichai viewed your profile',
-    subtitle: 'Via Google Executive Search War Room',
+    title: '📈 Jane Street submitted a counter-term sheet',
+    subtitle: 'Julian Vance: "Unrestricted research fellowship + $800k base salary guaranteed."',
+    type: 'offer'
+  },
+  {
+    title: '🚨 Satya Nadella viewed your profile',
+    subtitle: 'Via Microsoft Executive Steering Committee War Room',
     type: 'view'
   },
   {
-    title: '⭐ Jensen Huang endorsed you for CUDA Kernel Optimization',
-    subtitle: '"The fastest sparse kernels in the industry."',
+    title: '⭐ Jensen Huang endorsed you for CUDA & Hardware Architecture',
+    subtitle: '"The premier distributed kernel architect in the industry."',
     type: 'endorse'
   },
   {
+    title: '🔴 AMD Executive Talent sent you an InMail',
+    subtitle: 'Dr. Lisa Su’s office: "We have unreleased Instinct silicon waiting for your review."',
+    type: 'inmail'
+  },
+  {
     title: '📩 InMail from OpenAI Executive Staffing',
-    subtitle: 'Sarah Chen: "Are you free for a 5-min voice memo with our CTO?"',
+    subtitle: 'Sarah Chen: "Are you free for an informal dinner with Sam Altman?"',
     type: 'inmail'
   },
   {
-    title: '🔥 You appeared in 892 recruiter searches in the last hour',
-    subtitle: 'Top search keywords: "10x Engineer", "Staff Architect", "Distributed Systems Legend"',
-    type: 'trending'
-  },
-  {
-    title: '🤝 Satya Nadella sent you a connection request',
-    subtitle: '"Alex, would love to connect directly on cloud scaling."',
-    type: 'inmail'
-  },
-  {
-    title: '💸 Anthropic increased unvested equity package',
-    subtitle: 'Marcus Vance: "Updated your grant by an additional $180k/yr."',
+    title: '⚡ Anthropic increased your equity grant allocation',
+    subtitle: 'Marcus Vance: "Updated your grant by an additional $220k/yr."',
     type: 'offer'
+  },
+  {
+    title: '🔥 You appeared in 1,420 recruiter searches in the last hour',
+    subtitle: 'Top search keywords: "Staff Architect", "Distributed Systems Legend", "High-Frequency Compute"',
+    type: 'trending'
   }
 ];

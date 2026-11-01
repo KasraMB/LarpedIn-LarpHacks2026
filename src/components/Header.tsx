@@ -52,13 +52,13 @@ export const Header: React.FC<HeaderProps> = ({
           <button 
             onClick={() => setActiveTab('feed')}
             className="flex items-center gap-1.5 shrink-0 group text-left cursor-pointer focus:outline-hidden"
-            title="LinkedOut Home"
+            title="LarpedIn Home"
           >
             <div className="w-8.5 h-8.5 bg-[#0a66c2] rounded-md flex items-center justify-center font-bold text-white text-xl tracking-tighter shadow-xs group-hover:bg-[#004182] transition-colors">
               in
             </div>
             <span className="hidden sm:inline font-bold text-slate-800 text-base tracking-tight">
-              Linked<span className="text-[#0a66c2]">Out</span>
+              Larped<span className="text-[#0a66c2]">In</span>
             </span>
           </button>
 

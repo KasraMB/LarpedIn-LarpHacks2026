@@ -63,15 +63,18 @@ export const OffersVaultTab: React.FC<OffersVaultTabProps> = ({
           <div className="flex items-center gap-2 mb-2">
             <span className="bg-amber-500/20 text-amber-300 border border-amber-500/30 text-[11px] font-bold px-2.5 py-0.5 rounded-full flex items-center gap-1">
               <Sparkles className="w-3.5 h-3.5" />
-              <span>Silicon Valley Bidding War Vault</span>
+              <span>Silicon Valley & Wall St Bidding War Vault</span>
             </span>
             <span className="text-slate-400 text-xs">All packages 100% pre-authorized</span>
           </div>
           <h1 className="text-xl sm:text-2xl font-black tracking-tight text-white">
-            Current Highest Offer: <span className="text-emerald-400 font-mono">$1,600,000 / yr</span>
+            Current Highest Offer:{' '}
+            <span className="text-emerald-400 font-mono">
+              ${Math.max(...offers.map((o) => totalCalculatedComp(o))).toLocaleString()} / yr
+            </span>
           </h1>
           <p className="text-xs sm:text-sm text-slate-300 mt-2 leading-relaxed">
-            Tech giants are actively engaging in uncoordinated price escalations to secure your signature. Counter any term sheet below to test their budget limits.
+            Citadel, Jane Street, NVIDIA, Google DeepMind, OpenAI, Anthropic, Microsoft, Meta, and AMD are actively engaging in uncoordinated price escalations to secure your signature. Counter any term sheet below to test their budget limits.
           </p>
         </div>
 

@@ -43,12 +43,12 @@ import { Image, Video, Calendar, FileText, Sparkles, Flame, CheckCircle2 } from 
 export default function App() {
   // --- Persistent State ---
   const [userProfile, setUserProfile] = useState<UserProfile>(() => {
-    const saved = localStorage.getItem('linkedout_user_profile');
+    const saved = localStorage.getItem('larpedin_user_profile') || localStorage.getItem('linkedout_user_profile');
     return saved ? JSON.parse(saved) : initialUserProfile;
   });
 
   const [featherlessConfig, setFeatherlessConfig] = useState<FeatherlessConfig>(() => {
-    const saved = localStorage.getItem('linkedout_config');
+    const saved = localStorage.getItem('larpedin_config') || localStorage.getItem('linkedout_config');
     const parsed = saved ? JSON.parse(saved) : null;
     return {
       apiKey: parsed?.apiKey || '',
@@ -61,30 +61,48 @@ export default function App() {
 
   const [activeTab, setActiveTab] = useState<'feed' | 'network' | 'jobs' | 'messaging' | 'notifications' | 'offers'>('feed');
   const [feedPosts, setFeedPosts] = useState<FeedPostType[]>(() => {
-    const saved = localStorage.getItem('linkedout_posts');
+    const saved = localStorage.getItem('larpedin_posts') || localStorage.getItem('linkedout_posts');
     return saved ? JSON.parse(saved) : initialPosts;
   });
 
   const [chatThreads, setChatThreads] = useState<ChatThread[]>(() => {
-    const saved = localStorage.getItem('linkedout_threads');
-    return saved ? JSON.parse(saved) : initialChatThreads;
+    const saved = localStorage.getItem('larpedin_threads') || localStorage.getItem('linkedout_threads');
+    if (saved) {
+      try {
+        const parsed = JSON.parse(saved);
+        if (parsed.length >= 8) return parsed;
+      } catch {}
+    }
+    return initialChatThreads;
   });
 
   const [connectionRequests, setConnectionRequests] = useState<ConnectionRequest[]>(() => {
-    const saved = localStorage.getItem('linkedout_connections');
-    return saved ? JSON.parse(saved) : initialConnectionRequests;
+    const saved = localStorage.getItem('larpedin_connections') || localStorage.getItem('linkedout_connections');
+    if (saved) {
+      try {
+        const parsed = JSON.parse(saved);
+        if (parsed.length >= 6) return parsed;
+      } catch {}
+    }
+    return initialConnectionRequests;
   });
 
   const [jobListings, setJobListings] = useState<JobListing[]>(initialJobListings);
   const [appliedJobIds, setAppliedJobIds] = useState<string[]>([]);
   const [offerPackages, setOfferPackages] = useState<OfferPackage[]>(() => {
-    const saved = localStorage.getItem('linkedout_offers');
-    return saved ? JSON.parse(saved) : initialOfferPackages;
+    const saved = localStorage.getItem('larpedin_offers') || localStorage.getItem('linkedout_offers');
+    if (saved) {
+      try {
+        const parsed = JSON.parse(saved);
+        if (parsed.length >= 8) return parsed;
+      } catch {}
+    }
+    return initialOfferPackages;
   });
 
   const [notifications, setNotifications] = useState<NotificationItem[]>(initialNotifications);
   const [toasts, setToasts] = useState<AttentionToastItem[]>([]);
-  const [activeChatThreadId, setActiveChatThreadId] = useState<string | null>('thread_openai');
+  const [activeChatThreadId, setActiveChatThreadId] = useState<string | null>('thread_citadel');
   const [isRecruiterTyping, setIsRecruiterTyping] = useState(false);
   const [isGeneratingInMails, setIsGeneratingInMails] = useState(false);
 
@@ -95,11 +113,11 @@ export default function App() {
 
   // Sync to local storage
   useEffect(() => {
-    localStorage.setItem('linkedout_user_profile', JSON.stringify(userProfile));
+    localStorage.setItem('larpedin_user_profile', JSON.stringify(userProfile));
   }, [userProfile]);
 
   useEffect(() => {
-    localStorage.setItem('linkedout_config', JSON.stringify(featherlessConfig));
+    localStorage.setItem('larpedin_config', JSON.stringify(featherlessConfig));
     if (featherlessConfig.apiKey) {
       fetch('/api/save-config', {
         method: 'POST',
@@ -130,19 +148,19 @@ export default function App() {
   };
 
   useEffect(() => {
-    localStorage.setItem('linkedout_posts', JSON.stringify(feedPosts));
+    localStorage.setItem('larpedin_posts', JSON.stringify(feedPosts));
   }, [feedPosts]);
 
   useEffect(() => {
-    localStorage.setItem('linkedout_threads', JSON.stringify(chatThreads));
+    localStorage.setItem('larpedin_threads', JSON.stringify(chatThreads));
   }, [chatThreads]);
 
   useEffect(() => {
-    localStorage.setItem('linkedout_connections', JSON.stringify(connectionRequests));
+    localStorage.setItem('larpedin_connections', JSON.stringify(connectionRequests));
   }, [connectionRequests]);
 
   useEffect(() => {
-    localStorage.setItem('linkedout_offers', JSON.stringify(offerPackages));
+    localStorage.setItem('larpedin_offers', JSON.stringify(offerPackages));
   }, [offerPackages]);
 
   // --- Real-time Attention Bomb Generator ---
@@ -763,6 +781,14 @@ export default function App() {
   const unreadNotifsCount = notifications.filter((n) => !n.read).length;
   const pendingInvitesCount = connectionRequests.filter((r) => r.status === 'pending').length;
   const pendingOffersCount = offerPackages.length;
+  const highestOffer = offerPackages.reduce((max, cur) => {
+    const curTotal = cur.baseSalary + cur.equityAnnual + cur.signOnBonus;
+    const maxTotal = max.baseSalary + max.equityAnnual + max.signOnBonus;
+    return curTotal > maxTotal ? cur : max;
+  }, offerPackages[0]);
+  const highestOfferSummary = highestOffer
+    ? `Highest: $${((highestOffer.baseSalary + highestOffer.equityAnnual + highestOffer.signOnBonus) / 1000000).toFixed(2)}M TC (${highestOffer.company}) · Negotiate ➔`
+    : 'Highest: $1.95M TC (Citadel) · Negotiate ➔';
 
   return (
     <div className="min-h-screen bg-[#f4f2ee] text-[#191919] flex flex-col font-sans selection:bg-[#0a66c2]/20 selection:text-[#0a66c2]">
@@ -791,6 +817,8 @@ export default function App() {
               onEditProfile={() => setIsProfileEditOpen(true)}
               onToggleOpenToWork={handleToggleOpenToWork}
               onViewOffers={() => setActiveTab('offers')}
+              offersCount={offerPackages.length}
+              topOfferSummary={highestOfferSummary}
             />
 
             {/* Center Column: Post Creator & Viral Feed */}
@@ -859,7 +887,7 @@ export default function App() {
               ))}
             </div>
 
-            {/* Right Column: LinkedOut News & Recruiter Spotlight */}
+            {/* Right Column: LarpedIn News & Recruiter Spotlight */}
             <RightSidebar
               recruiters={recruitersList}
               onOpenMessageWithRecruiter={handleOpenMessageWithRecruiter}

@@ -1,5 +1,5 @@
-import React from 'react';
-import { Sparkles, ArrowRight, ShieldCheck, Flame, UserPlus, MessageCircle } from 'lucide-react';
+import React, { useState } from 'react';
+import { Sparkles, ArrowRight, ShieldCheck, Flame, UserPlus, MessageCircle, ChevronDown, ChevronUp } from 'lucide-react';
 import { Recruiter } from '../types';
 
 interface RightSidebarProps {
@@ -15,48 +15,49 @@ export const RightSidebar: React.FC<RightSidebarProps> = ({
   onConnectWithRecruiter,
   userName
 }) => {
+  const [showAllRecruiters, setShowAllRecruiters] = useState(false);
   const firstName = userName.split(' ')[0] || 'Alex';
 
   const newsItems = [
     {
-      title: `${firstName} sparks Silicon Valley bidding frenzy`,
-      readers: '64,821 readers',
+      title: `${firstName} sparks Silicon Valley & Wall St bidding war`,
+      readers: '84,920 readers',
       time: '1h ago',
       hot: true
     },
     {
-      title: 'Remote Staff Architect comp crosses $1.6M',
-      readers: '38,190 readers',
-      time: '3h ago',
+      title: 'Citadel & Jane Street offer $2M+ to counter Big Tech AI offers',
+      readers: '62,190 readers',
+      time: '2h ago',
       hot: true
     },
     {
-      title: 'OpenAI & DeepMind double executive sign-on bonuses',
-      readers: '22,410 readers',
-      time: '5h ago',
+      title: 'Microsoft, OpenAI & Google accelerate unvested equity pools',
+      readers: '41,410 readers',
+      time: '4h ago',
       hot: false
     },
     {
-      title: 'Tech recruiters admit: "We fight over the top 0.01%"',
-      readers: '19,530 readers',
-      time: '8h ago',
+      title: 'NVIDIA & AMD compete directly to hire top kernel talent',
+      readers: '33,530 readers',
+      time: '6h ago',
       hot: false
     },
     {
-      title: 'Meta waives all coding loops for top infra leaders',
-      readers: '14,280 readers',
-      time: '12h ago',
+      title: 'Meta waives all coding loops for principal systems architects',
+      readers: '28,280 readers',
+      time: '10h ago',
       hot: false
     }
   ];
 
   return (
     <aside className="w-full lg:w-[300px] shrink-0 flex flex-col gap-3">
-      {/* LinkedOut News Card */}
+      {/* LarpedIn News Card */}
       <div className="bg-white rounded-lg border border-[#e0dfdc] p-4 shadow-xs">
         <div className="flex items-center justify-between mb-3">
           <div className="flex items-center gap-1.5">
-            <h3 className="font-bold text-sm text-slate-900">LinkedOut News</h3>
+            <h3 className="font-bold text-sm text-slate-900">LarpedIn News</h3>
             <span className="text-[10px] bg-red-100 text-red-700 font-bold px-1.5 py-0.2 rounded">
               LIVE
             </span>
@@ -98,7 +99,7 @@ export const RightSidebar: React.FC<RightSidebarProps> = ({
         </div>
 
         <div className="flex flex-col gap-3.5">
-          {recruiters.slice(0, 3).map((rec) => (
+          {(showAllRecruiters ? recruiters : recruiters.slice(0, 4)).map((rec) => (
             <div key={rec.id} className="flex items-start gap-2.5 pb-3 border-b border-slate-100 last:border-b-0 last:pb-0">
               <img
                 src={rec.avatar}
@@ -136,6 +137,16 @@ export const RightSidebar: React.FC<RightSidebarProps> = ({
             </div>
           ))}
         </div>
+
+        {recruiters.length > 4 && (
+          <button
+            onClick={() => setShowAllRecruiters(!showAllRecruiters)}
+            className="w-full mt-3 py-1.5 px-2 text-xs font-semibold text-slate-600 hover:text-[#0a66c2] hover:bg-slate-50 border border-slate-200 rounded-md flex items-center justify-center gap-1 transition-colors cursor-pointer"
+          >
+            <span>{showAllRecruiters ? 'Show Fewer' : `View All ${recruiters.length} Big Tech & Quant Suitors`}</span>
+            {showAllRecruiters ? <ChevronUp className="w-3.5 h-3.5" /> : <ChevronDown className="w-3.5 h-3.5" />}
+          </button>
+        )}
       </div>
 
       {/* Ego-Boosting Ad Banner */}
@@ -161,7 +172,7 @@ export const RightSidebar: React.FC<RightSidebarProps> = ({
         <span>·</span>
         <span>Ad Choices</span>
         <span>·</span>
-        <span>LinkedOut Corporation © 2026</span>
+        <span>LarpedIn Corporation © 2026</span>
       </div>
     </aside>
   );
