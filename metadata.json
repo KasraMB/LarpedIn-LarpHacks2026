@@ -1,0 +1,6 @@
+{
+  "name": "LinkedOut - The Ultimate In-Demand Simulator",
+  "description": "A high-fidelity LinkedIn clone where you are the only human and an army of AI recruiters from Google, OpenAI, Anthropic, and Meta frantically compete to hire you with 7-figure offers.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
