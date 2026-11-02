@@ -1,4 +1,5 @@
 import { UserProfile, Recruiter, FeedPost, ChatThread, ConnectionRequest, JobListing, OfferPackage, NotificationItem } from '../types';
+import userAvatar from '../assets/images/avatar_user_1793573726993.jpg';
 
 export const initialUserProfile: UserProfile = {
   id: 'user_main',
@@ -6,7 +7,7 @@ export const initialUserProfile: UserProfile = {
   headline: 'Staff Principal Distributed Systems & AI Infrastructure Architect · Ex-FAANG · Open to 7-Figure Challenges',
   currentCompany: 'Self-Employed / Independent Advisor',
   location: 'San Francisco Bay Area · Worldwide Remote',
-  avatar: '/src/assets/images/avatar_user_1793573726993.jpg',
+  avatar: userAvatar,
   coverImage: '/src/assets/images/hero_office_banner_1793573728449.jpg',
   connectionsCount: 3412,
   profileViews: 18490,

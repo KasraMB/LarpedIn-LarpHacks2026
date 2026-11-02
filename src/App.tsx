@@ -44,7 +44,9 @@ export default function App() {
   // --- Persistent State ---
   const [userProfile, setUserProfile] = useState<UserProfile>(() => {
     const saved = localStorage.getItem('larpedin_user_profile') || localStorage.getItem('linkedout_user_profile');
-    return saved ? JSON.parse(saved) : initialUserProfile;
+    return saved
+      ? { ...JSON.parse(saved), avatar: initialUserProfile.avatar }
+      : initialUserProfile;
   });
 
   const [featherlessConfig, setFeatherlessConfig] = useState<FeatherlessConfig>(() => {
@@ -62,7 +64,18 @@ export default function App() {
   const [activeTab, setActiveTab] = useState<'feed' | 'network' | 'jobs' | 'messaging' | 'notifications' | 'offers'>('feed');
   const [feedPosts, setFeedPosts] = useState<FeedPostType[]>(() => {
     const saved = localStorage.getItem('larpedin_posts') || localStorage.getItem('linkedout_posts');
-    return saved ? JSON.parse(saved) : initialPosts;
+    const posts: FeedPostType[] = saved ? JSON.parse(saved) : initialPosts;
+    return posts.map((post) => ({
+      ...post,
+      author: post.author.isUser
+        ? { ...post.author, avatar: initialUserProfile.avatar }
+        : post.author,
+      commentsList: post.commentsList.map((comment) =>
+        comment.avatar.includes('avatar_user_')
+          ? { ...comment, avatar: initialUserProfile.avatar }
+          : comment
+      ),
+    }));
   });
 
   const [chatThreads, setChatThreads] = useState<ChatThread[]>(() => {
