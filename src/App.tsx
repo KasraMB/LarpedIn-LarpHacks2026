@@ -40,6 +40,10 @@ import { ProfileEditModal } from './components/ProfileEditModal';
 import { AttentionToasts, AttentionToastItem } from './components/AttentionToasts';
 import { Image, Video, Calendar, FileText, Sparkles, Flame, CheckCircle2 } from 'lucide-react';
 
+// The user avatar was renamed; rewrite the old path in any state saved in localStorage.
+const OLD_USER_AVATAR = '/src/assets/images/avatar_user_1793573726993.jpg';
+const migrateAvatar = (raw: string) => raw.split(OLD_USER_AVATAR).join(initialUserProfile.avatar);
+
 export default function App() {
   // --- Persistent State ---
   const [userProfile, setUserProfile] = useState<UserProfile>(() => {
@@ -64,7 +68,7 @@ export default function App() {
   const [activeTab, setActiveTab] = useState<'feed' | 'network' | 'jobs' | 'messaging' | 'notifications' | 'offers'>('feed');
   const [feedPosts, setFeedPosts] = useState<FeedPostType[]>(() => {
     const saved = localStorage.getItem('larpedin_posts') || localStorage.getItem('linkedout_posts');
-    const posts: FeedPostType[] = saved ? JSON.parse(saved) : initialPosts;
+    const posts: FeedPostType[] = saved ? JSON.parse(migrateAvatar(saved)) : initialPosts;
     return posts.map((post) => ({
       ...post,
       author: post.author.isUser
@@ -82,7 +86,7 @@ export default function App() {
     const saved = localStorage.getItem('larpedin_threads') || localStorage.getItem('linkedout_threads');
     if (saved) {
       try {
-        const parsed = JSON.parse(saved);
+        const parsed = JSON.parse(migrateAvatar(saved));
         if (parsed.length >= 8) return parsed;
       } catch {}
     }

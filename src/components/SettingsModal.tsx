@@ -71,7 +71,7 @@ export const SettingsModal: React.FC<SettingsModalProps> = ({
           apiKey: apiKey.trim(),
           model: selectedModel,
           recruiter: { name: 'Sarah Chen', title: 'Staff Recruiter', company: 'OpenAI' },
-          userProfile: { name: 'Alex Rivera', headline: 'Staff Systems Architect' }
+          userProfile: { name: 'Alex Rivera', headline: 'Quantitative Developer at Jane Street' }
         })
       });
 
